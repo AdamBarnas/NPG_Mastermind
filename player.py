@@ -8,7 +8,7 @@ class Player(object):
         self.pos = Vector2(29, 29)
         self.game.kwadrat.x = self.pos[0]
         self.game.kwadrat.y = self.pos[1]
-        self.addon = self.n = 0
+        self.addon = self.n = self.drift = 0
 
     def tick(self):
         # input
@@ -79,6 +79,8 @@ class Player(object):
                 self.addon = 5
             elif self.game.kwadrat.x >= 279 and self.game.kwadrat.x <= 280:
                 self.addon = 6
+            self.n += 1
+            self.drift = 50
         print(self.game.kwadrat.x)
 
     def draw(self):
@@ -102,15 +104,16 @@ class Player(object):
         pygame.draw.circle(self.game.screen, self.purple, (300, 50), 20)
 
         # new ones
-        if self.addon == 1:
-            pygame.draw.circle(self.game.screen, self.yellow, (300 + self.n, 300), 20)
-        elif self.addon == 2:
-            pygame.draw.circle(self.game.screen, self.red, (300 + self.n, 300), 20)
-        elif self.addon == 3:
-            pygame.draw.circle(self.game.screen, self.orange, (300 + self.n, 300), 20)
-        elif self.addon == 4:
-            pygame.draw.circle(self.game.screen, self.blue, (300 + self.n, 300), 20)
-        elif self.addon == 5:
-            pygame.draw.circle(self.game.screen, self.green, (300 + self.n, 300), 20)
-        elif self.addon == 6:
-            pygame.draw.circle(self.game.screen, self.purple, (300 + self.n, 300), 20)
+        for i in range(0, self.n):
+            if self.addon == 1:
+                pygame.draw.circle(self.game.screen, self.yellow, (300 + i*(self.drift), 300), 20)
+            elif self.addon == 2:
+                pygame.draw.circle(self.game.screen, self.red, (300 + i*(self.drift), 300), 20)
+            elif self.addon == 3:
+                pygame.draw.circle(self.game.screen, self.orange, (300 + i*(self.drift), 300), 20)
+            elif self.addon == 4:
+                pygame.draw.circle(self.game.screen, self.blue, (300 + i*(self.drift), 300), 20)
+            elif self.addon == 5:
+                pygame.draw.circle(self.game.screen, self.green, (300 + i*(self.drift), 300), 20)
+            elif self.addon == 6:
+                pygame.draw.circle(self.game.screen, self.purple, (300 + i*(self.drift), 300), 20)
