@@ -39,7 +39,6 @@ class Game(object):
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                     self.player.ruch("space")
 
-
             # tick
             self.cl_dt += self.clock.tick()/1000
             while self.cl_dt > self.tickrate:
