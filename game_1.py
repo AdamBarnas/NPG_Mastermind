@@ -1,6 +1,7 @@
 import sys
 import pygame
 from player import Player
+from interface import Interface
 
 print(pygame.__version__)
 
@@ -22,6 +23,7 @@ class Game(object):
         self.n = 0
 
         self.player = Player(self)
+        self.interface = Interface(self)
 
         while True:
             # eventy
@@ -54,6 +56,7 @@ class Game(object):
         self.player.tick()
 
     def draw(self):
+        self.interface.draw()
         self.player.draw()
 
 if __name__ == "__main__":

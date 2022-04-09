@@ -2,7 +2,6 @@ import random
 import pygame
 from pygame.math import Vector2
 
-
 class Player(object):
 
     def __init__(self, game):
@@ -97,13 +96,13 @@ class Player(object):
         print(self.kombinacja)
 
     def ruch(self, direction):
-        if direction == "w":
-            self.game.kwadrat.y -= 50
+        '''if direction == "w":
+           self.game.kwadrat.y -= 50
         elif direction == "s":
-            self.game.kwadrat.y += 50
-        elif direction == "d":
+            self.game.kwadrat.y += 50'''
+        if direction == "d" and self.game.kwadrat.x < 279:
             self.game.kwadrat.x += 50
-        elif direction == "a":
+        elif direction == "a" and self.game.kwadrat.x > 30:
             self.game.kwadrat.x -= 50
         elif direction == "space":
 

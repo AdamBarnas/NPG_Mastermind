@@ -9,7 +9,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98ef3575-80b0-4021-a596-5c43be7ed8ac" name="Changes" comment="">
+    <list default="true" id="98ef3575-80b0-4021-a596-5c43be7ed8ac" name="Changes" comment="mechanika gry">
+      <change afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
@@ -124,8 +125,17 @@
       <workItem from="1649017669645" duration="6799000" />
       <workItem from="1649063045736" duration="951000" />
       <workItem from="1649097745086" duration="310000" />
-      <workItem from="1649415959782" duration="14169000" />
+      <workItem from="1649415959782" duration="15877000" />
+      <workItem from="1649505326696" duration="1833000" />
     </task>
+    <task id="LOCAL-00001" summary="mechanika gry">
+      <created>1649449020093</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649449020093</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,13 +146,44 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/test-alfa" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="mechanika gry" />
+    <option name="LAST_COMMIT_MESSAGE" value="mechanika gry" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NPG_Mastermind$game_1.coverage" NAME="game_1 Coverage Results" MODIFIED="1649448863406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NPG_Mastermind$game_1.coverage" NAME="game_1 Coverage Results" MODIFIED="1649510159069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
