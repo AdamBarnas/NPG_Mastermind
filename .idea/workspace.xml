@@ -9,10 +9,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98ef3575-80b0-4021-a596-5c43be7ed8ac" name="Changes" comment="mechanika gry">
-      <change afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
+    <list default="true" id="98ef3575-80b0-4021-a596-5c43be7ed8ac" name="Changes" comment="plik na interface">
+      <change afterPath="$PROJECT_DIR$/Xs-s-qRtRn.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sounds.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +61,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PSiO/mdig-agh-lang_cpp__exercises-288bd81c85d7/mdig-agh-lang_cpp__exercises-288bd81c85d7/skeletons/matlab-1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\studia\GIT\NPG_Mastermind" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.game_1">
     <configuration name="game_1" type="PythonConfigurationType" factoryName="Python">
@@ -126,7 +133,7 @@
       <workItem from="1649063045736" duration="951000" />
       <workItem from="1649097745086" duration="310000" />
       <workItem from="1649415959782" duration="15877000" />
-      <workItem from="1649505326696" duration="1833000" />
+      <workItem from="1649505326696" duration="3464000" />
     </task>
     <task id="LOCAL-00001" summary="mechanika gry">
       <created>1649449020093</created>
@@ -135,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649449020093</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="plik na interface">
+      <created>1649510312012</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649510312012</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,9 +195,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mechanika gry" />
-    <option name="LAST_COMMIT_MESSAGE" value="mechanika gry" />
+    <MESSAGE value="plik na interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="plik na interface" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NPG_Mastermind$game_1.coverage" NAME="game_1 Coverage Results" MODIFIED="1649510159069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NPG_Mastermind$game_1.coverage" NAME="game_1 Coverage Results" MODIFIED="1649511580086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

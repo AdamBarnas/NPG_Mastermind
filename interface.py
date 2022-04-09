@@ -1,12 +1,11 @@
 import pygame
-from player import Player
+import player
 
 
 class Interface(object):
 
     def __init__(self, game):
         self.game = game
-
         # Colours
         self.yellow = (255, 255, 0)
         self.red = (255, 0, 0)

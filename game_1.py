@@ -2,6 +2,7 @@ import sys
 import pygame
 from player import Player
 from interface import Interface
+from sounds import Sounds
 
 print(pygame.__version__)
 
@@ -24,6 +25,17 @@ class Game(object):
 
         self.player = Player(self)
         self.interface = Interface(self)
+        self.sounds = Sounds(self)
+
+        # Colours
+        self.yellow = (255, 255, 0)
+        self.red = (255, 0, 0)
+        self.green = (0, 255, 0)
+        self.blue = (0, 0, 255)
+        self.orange = (255, 128, 0)
+        self.purple = (200, 0, 255)
+        self.white = (255, 255, 255)
+        self.gray = (128, 128, 128)
 
         while True:
             # eventy
@@ -36,6 +48,7 @@ class Game(object):
                     self.player.ruch("a")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_w:
                     self.player.ruch("w")
+                    self.sounds.music()
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
                     self.player.ruch("s")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
