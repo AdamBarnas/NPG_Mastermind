@@ -1,5 +1,7 @@
+import random
 import pygame
 from pygame.math import Vector2
+
 class Player(object):
 
     def __init__(self, game):
@@ -8,8 +10,15 @@ class Player(object):
         self.pos = Vector2(29, 29)
         self.game.kwadrat.x = self.pos[0]
         self.game.kwadrat.y = self.pos[1]
-        self.addon = self.n = self.drift = 0
+        self.n = self.col = self.row = self.drift = 0
+        self.addon = 0
+        self.lista = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+        self.odp = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
+        self.kombinacja = [0, 0, 0, 0]
+        self.good = 0
+        self.ok = 0
 
+        self.szyfr()
     def tick(self):
         # input
         '''inkey = pygame.key.get_pressed()
@@ -57,63 +66,129 @@ class Player(object):
             self.game.n = 0
         self.game.n += 4
 
+        # nowy wiersz
+        if self.lista[self.row][3] != 0:
+            self.spr()
+            self.row += 1
+            self.col = 0
+
+    # ustawianie kombinacji
+    def szyfr(self):
+        self.kombinacja = [random.randint(1, 6), random.randint(1, 6), random.randint(1, 6), random.randint(1, 6)]
+        for t in range(2):
+            for i in range(4):
+                for j in range(4):
+                    if self.kombinacja[i] == self.kombinacja[j] and i != j:
+                        if self.kombinacja[j] == 6:
+                            self.kombinacja[j] = 1
+                        else:
+                            self.kombinacja[j] += 1
+        print(self.kombinacja)
+
     def ruch(self, direction):
-        if direction == "w":
-            self.game.kwadrat.y -= 50
+        '''if direction == "w":
+           self.game.kwadrat.y -= 50
         elif direction == "s":
-            self.game.kwadrat.y += 50
-        elif direction == "d":
+            self.game.kwadrat.y += 50'''
+        if direction == "d" and self.game.kwadrat.x < 279:
             self.game.kwadrat.x += 50
-        elif direction == "a":
+        elif direction == "a" and self.game.kwadrat.x > 30:
             self.game.kwadrat.x -= 50
         elif direction == "space":
-            if self.game.kwadrat.x >= 29 and self.game.kwadrat.x <= 30:
-                self.addon = 1
-            elif self.game.kwadrat.x >= 79 and self.game.kwadrat.x <= 80:
-                self.addon = 2
-            elif self.game.kwadrat.x >= 129 and self.game.kwadrat.x <= 130:
-                self.addon = 3
-            elif self.game.kwadrat.x >= 179 and self.game.kwadrat.x <= 180:
-                self.addon = 4
-            elif self.game.kwadrat.x >= 229 and self.game.kwadrat.x <= 230:
-                self.addon = 5
-            elif self.game.kwadrat.x >= 279 and self.game.kwadrat.x <= 280:
-                self.addon = 6
-            self.n += 1
+
+            # wybór koloru
+            if self.game.kwadrat.x == 29:
+                self.lista[self.row][self.col] = 1
+            elif self.game.kwadrat.x == 79:
+                self.lista[self.row][self.col] = 2
+            elif self.game.kwadrat.x == 129:
+                self.lista[self.row][self.col] = 3
+            elif self.game.kwadrat.x == 179:
+                self.lista[self.row][self.col] = 4
+            elif self.game.kwadrat.x == 229:
+                self.lista[self.row][self.col] = 5
+            elif self.game.kwadrat.x == 279:
+                self.lista[self.row][self.col] = 6
+            self.col += 1
             self.drift = 50
-        print(self.game.kwadrat.x)
+            print(self.lista)
+
+
+        # współrzędne myszy
+        # print(pygame.mouse.get_pos())
+
+    def spr(self):
+        self.ok = self.good = 0
+        for i in range(4):
+            if self.kombinacja[i] == self.lista[self.row][i]:
+                self.good += 1
+            for j in range(4):
+                if self.kombinacja[i] == self.lista[self.row][j] and j != i:
+                    self.ok += 1
+        '''print(self.good)
+        print(self.ok)'''
+        self.odp[self.row] = [self.good, self.ok]
+        print(self.odp)
 
     def draw(self):
         color = (self.game.R, self.game.G, self.game.B)
         pygame.draw.rect(self.game.screen, color, self.game.kwadrat)
 
-        # Colours
-        self.yellow = (255, 255, 0)
-        self.red = (255, 0, 0)
-        self.green = (0, 255, 0)
-        self.blue = (0, 0, 255)
-        self.orange = (255, 128, 0)
-        self.purple = (200, 0, 255)
-
         # interface
-        pygame.draw.circle(self.game.screen, self.yellow, (50, 50), 20)
-        pygame.draw.circle(self.game.screen, self.red, (100, 50), 20)
-        pygame.draw.circle(self.game.screen, self.orange, (150, 50), 20)
-        pygame.draw.circle(self.game.screen, self.blue, (200, 50), 20)
-        pygame.draw.circle(self.game.screen, self.green, (250, 50), 20)
-        pygame.draw.circle(self.game.screen, self.purple, (300, 50), 20)
+        pygame.draw.circle(self.game.screen, self.game.yellow, (50, 50), 20)
+        pygame.draw.circle(self.game.screen, self.game.red, (100, 50), 20)
+        pygame.draw.circle(self.game.screen, self.game.orange, (150, 50), 20)
+        pygame.draw.circle(self.game.screen, self.game.blue, (200, 50), 20)
+        pygame.draw.circle(self.game.screen, self.game.green, (250, 50), 20)
+        pygame.draw.circle(self.game.screen, self.game.purple, (300, 50), 20)
 
         # new ones
-        for i in range(0, self.n):
-            if self.addon == 1:
-                pygame.draw.circle(self.game.screen, self.yellow, (300 + i*(self.drift), 300), 20)
-            elif self.addon == 2:
-                pygame.draw.circle(self.game.screen, self.red, (300 + i*(self.drift), 300), 20)
-            elif self.addon == 3:
-                pygame.draw.circle(self.game.screen, self.orange, (300 + i*(self.drift), 300), 20)
-            elif self.addon == 4:
-                pygame.draw.circle(self.game.screen, self.blue, (300 + i*(self.drift), 300), 20)
-            elif self.addon == 5:
-                pygame.draw.circle(self.game.screen, self.green, (300 + i*(self.drift), 300), 20)
-            elif self.addon == 6:
-                pygame.draw.circle(self.game.screen, self.purple, (300 + i*(self.drift), 300), 20)
+        for j in range(0, self.row + 1):
+            d = 0
+            for i in range(0, 4):
+                if self.lista[j][i] == 1:
+                    pygame.draw.circle(self.game.screen, self.game.yellow, (400 + i*self.drift, 50 + j*self.drift), 20)
+                elif self.lista[j][i] == 2:
+                    pygame.draw.circle(self.game.screen, self.game.red, (400 + i*self.drift, 50 + j*self.drift), 20)
+                elif self.lista[j][i] == 3:
+                    pygame.draw.circle(self.game.screen, self.game.orange, (400 + i*self.drift, 50 + j*self.drift), 20)
+                elif self.lista[j][i] == 4:
+                    pygame.draw.circle(self.game.screen, self.game.blue, (400 + i*self.drift, 50 + j*self.drift), 20)
+                elif self.lista[j][i] == 5:
+                    pygame.draw.circle(self.game.screen, self.game.green, (400 + i*self.drift, 50 + j*self.drift), 20)
+                elif self.lista[j][i] == 6:
+                    pygame.draw.circle(self.game.screen, self.game.purple, (400 + i*self.drift, 50 + j*self.drift), 20)
+
+            # wyniki
+
+            if self.odp[j][0] >= 1:
+                pygame.draw.circle(self.game.screen, self.game.white, (600, 40 + self.drift * j), 8)
+                if self.odp[j][0] >= 2:
+                    pygame.draw.circle(self.game.screen, self.game.white, (600, 60 + self.drift * j), 8)
+                    if self.odp[j][0] >= 3:
+                        pygame.draw.circle(self.game.screen, self.game.white, (620, 40 + self.drift * j), 8)
+                        if self.odp[j][0] == 4:
+                            pygame.draw.circle(self.game.screen, self.game.white, (620, 60 + self.drift * j), 8)
+
+                            # wygrana
+                            pygame.draw.circle(self.game.screen, self.game.green, (400, 320), 100)
+                        elif self.odp[j][1] == 1:
+                            pygame.draw.circle(self.game.screen, self.game.gray, (620, 60 + self.drift * j), 8)
+                    elif self.odp[j][1] >= 1:
+                        pygame.draw.circle(self.game.screen, self.game.gray, (620, 40 + self.drift * j), 8)
+                        if self.odp[j][1] == 2:
+                            pygame.draw.circle(self.game.screen, self.game.gray, (620, 60 + self.drift * j), 8)
+                elif self.odp[j][1] >= 1:
+                    pygame.draw.circle(self.game.screen, self.game.gray, (600, 60 + self.drift * j), 8)
+                    if self.odp[j][1] >= 2:
+                        pygame.draw.circle(self.game.screen, self.game.gray, (620, 40 + self.drift * j), 8)
+                        if self.odp[j][1] == 3:
+                            pygame.draw.circle(self.game.screen, self.game.gray, (620, 60 + self.drift * j), 8)
+            elif self.odp[j][1] >= 1:
+                pygame.draw.circle(self.game.screen, self.game.gray, (600, 40 + self.drift * j), 8)
+                if self.odp[j][1] >= 2:
+                    pygame.draw.circle(self.game.screen, self.game.gray, (600, 60 + self.drift * j), 8)
+                    if self.odp[j][1] >= 3:
+                        pygame.draw.circle(self.game.screen, self.game.gray, (620, 40 + self.drift * j), 8)
+                        if self.odp[j][1] == 4:
+                            pygame.draw.circle(self.game.screen, self.game.gray, (620, 60 + self.drift * j), 8)
