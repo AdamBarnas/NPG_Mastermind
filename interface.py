@@ -17,6 +17,6 @@ class Interface(object):
         self.gray = (128, 128, 128)
 
     def draw(self):
-        pygame.draw.rect(self.game.screen, (50, 50, 50), pygame.Rect(0, 0, 800, 640))
+        pygame.draw.rect(self.game.screen, (255, 0 0), pygame.Rect(0, 0, 800, 640))
 
     #kometarz testowy
