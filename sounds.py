@@ -9,5 +9,8 @@ class Sounds(object):
     def music(self):
         pygame.mixer.music.set_volume(self.volume)
         print(pygame.mixer.music.get_volume())
-        pygame.mixer.music.load("Xs-s-qRtRn.mp3")
-        pygame.mixer.music.play()
+        if self.game.win == 1:
+            pygame.mixer.music.load("Xs-s-qRtRn.mp3")
+            pygame.mixer.music.play()
+        elif self.game.win == 3:
+            pygame.mixer.music.load("")

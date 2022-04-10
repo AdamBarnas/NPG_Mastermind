@@ -21,7 +21,7 @@ class Game(object):
 
         self.kwadrat = pygame.Rect(30, 30, 42, 42)
         self.R = self.G = self.B = 255
-        self.n = 0
+        self.n = self.win = 0
 
         self.player = Player(self)
         self.interface = Interface(self)
@@ -64,6 +64,10 @@ class Game(object):
             self.screen.fill((0, 0, 0))
             self.draw()
             pygame.display.flip()
+
+            if self.win == 1:
+                self.sounds.music()
+                self.win = 2
 
     def tick(self):
         self.player.tick()
