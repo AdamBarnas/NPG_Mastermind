@@ -18,3 +18,5 @@ class Interface(object):
 
     def draw(self):
         pygame.draw.rect(self.game.screen, (50, 50, 50), pygame.Rect(0, 0, 800, 640))
+
+    #kometarz testowy
