@@ -115,7 +115,7 @@ class Player(object):
 
 
         # współrzędne myszy
-        # print(pygame.mouse.get_pos())
+        print(pygame.mouse.get_pos())
 
     def spr(self):
         self.ok = self.good = 0
