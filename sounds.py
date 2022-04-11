@@ -10,7 +10,7 @@ class Sounds(object):
         pygame.mixer.music.set_volume(self.volume)
         print(pygame.mixer.music.get_volume())
         if self.game.win == 1:
-            pygame.mixer.music.load("Xs-s-qRtRn.mp3")
+            pygame.mixer.music.load("music/Xs-s-qRtRn.mp3")
             pygame.mixer.music.play()
         elif self.game.win == 3:
             pygame.mixer.music.load("")
