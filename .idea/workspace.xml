@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="98ef3575-80b0-4021-a596-5c43be7ed8ac" name="Changes" comment="plik na dzwięki">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +156,7 @@
       <workItem from="1649668692893" duration="95000" />
       <workItem from="1649669316773" duration="198000" />
       <workItem from="1649669562762" duration="94000" />
+      <workItem from="1649676777779" duration="1232000" />
     </task>
     <task id="LOCAL-00001" summary="mechanika gry">
       <created>1649449020093</created>
@@ -231,7 +231,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NPG_Mastermind$game_1.coverage" NAME="game_1 Coverage Results" MODIFIED="1649519535458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/workspace_xml$Laptop_game.coverage" NAME="Laptop game Coverage Results" MODIFIED="1649669613359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/workspace_xml$Laptop_game.coverage" NAME="Laptop game Coverage Results" MODIFIED="1649677313018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/workspace_xml$game_1.coverage" NAME="game_1 Coverage Results" MODIFIED="1649669392100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
