@@ -169,10 +169,9 @@ class Player(object):
                         pygame.draw.circle(self.game.screen, self.game.white, (620, 40 + self.drift * j), 8)
                         if self.odp[j][0] == 4:
                             pygame.draw.circle(self.game.screen, self.game.white, (620, 60 + self.drift * j), 8)
-                            self.odp[j] = [0, 0]
 
                             # wygrana
-                            self.game.win = 1
+                            self.game.win += 1
                             pygame.draw.circle(self.game.screen, self.game.green, (400, 320), 100)
                         elif self.odp[j][1] == 1:
                             pygame.draw.circle(self.game.screen, self.game.gray, (620, 60 + self.drift * j), 8)
