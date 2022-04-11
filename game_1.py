@@ -53,6 +53,10 @@ class Game(object):
                     self.player.ruch("s")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                     self.player.ruch("space")
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
+                    self.player.ruch("d")
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
+                    self.player.ruch("a")
 
             # tick
             self.cl_dt += self.clock.tick()/1000
