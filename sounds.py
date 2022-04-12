@@ -19,7 +19,7 @@ class Sounds(object):
         elif self.game.win == 1:
 
             pygame.mixer.music.set_volume(0.15)
-            # muzyka tło
+            # muzyka hard
 
             if self.i == 0:
                 pygame.mixer.music.load("music/hard_1.mp3")
@@ -29,5 +29,35 @@ class Sounds(object):
                 self.i = 2
             elif self.i == 2:
                 pygame.mixer.music.load("music/hard_3.mp3")
+                self.i = 0
+            pygame.mixer.music.play()
+
+        elif self.game.win == 3:
+            pygame.mixer.music.set_volume(0.15)
+            # muzyka medium
+
+            if self.i == 0:
+                pygame.mixer.music.load("music/medium_1.mp3")
+                self.i = 1
+            elif self.i == 1:
+                pygame.mixer.music.load("music/medium_2.mp3")
+                self.i = 2
+            elif self.i == 2:
+                pygame.mixer.music.load("music/medium_3.mp3")
+                self.i = 0
+            pygame.mixer.music.play()
+
+        elif self.game.win == 4:
+            pygame.mixer.music.set_volume(0.15)
+            # muzyka easy
+
+            if self.i == 0:
+                pygame.mixer.music.load("music/easy_1.mp3")
+                self.i = 1
+            elif self.i == 1:
+                pygame.mixer.music.load("music/easy_2.mp3")
+                self.i = 2
+            elif self.i == 2:
+                pygame.mixer.music.load("music/easy_3.mp3")
                 self.i = 0
             pygame.mixer.music.play()
