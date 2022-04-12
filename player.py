@@ -162,13 +162,13 @@ class Player(object):
             # wyniki
 
             if self.odp[j][0] >= 1:
-                pygame.draw.circle(self.game.screen, self.game.white, (600, 40 + self.drift * j), 8)
+                pygame.draw.circle(self.game.screen, self.game.white, (612, 40 + self.drift * j), 8)
                 if self.odp[j][0] >= 2:
-                    pygame.draw.circle(self.game.screen, self.game.white, (600, 60 + self.drift * j), 8)
+                    pygame.draw.circle(self.game.screen, self.game.white, (612, 60 + self.drift * j), 8)
                     if self.odp[j][0] >= 3:
-                        pygame.draw.circle(self.game.screen, self.game.white, (620, 40 + self.drift * j), 8)
+                        pygame.draw.circle(self.game.screen, self.game.white, (632, 40 + self.drift * j), 8)
                         if self.odp[j][0] == 4:
-                            pygame.draw.circle(self.game.screen, self.game.white, (620, 60 + self.drift * j), 8)
+                            pygame.draw.circle(self.game.screen, self.game.white, (632, 60 + self.drift * j), 8)
 
                             # wygrana
                             if self.game.win == 1:
@@ -178,22 +178,22 @@ class Player(object):
                             self.game.screen.blit(win_image,(620,320+17))
 
                         elif self.odp[j][1] == 1:
-                            pygame.draw.circle(self.game.screen, self.game.gray, (620, 60 + self.drift * j), 8)
+                            pygame.draw.circle(self.game.screen, self.game.gray, (632, 60 + self.drift * j), 8)
                     elif self.odp[j][1] >= 1:
-                        pygame.draw.circle(self.game.screen, self.game.gray, (620, 40 + self.drift * j), 8)
+                        pygame.draw.circle(self.game.screen, self.game.gray, (632, 40 + self.drift * j), 8)
                         if self.odp[j][1] == 2:
-                            pygame.draw.circle(self.game.screen, self.game.gray, (620, 60 + self.drift * j), 8)
+                            pygame.draw.circle(self.game.screen, self.game.gray, (632, 60 + self.drift * j), 8)
                 elif self.odp[j][1] >= 1:
-                    pygame.draw.circle(self.game.screen, self.game.gray, (600, 60 + self.drift * j), 8)
+                    pygame.draw.circle(self.game.screen, self.game.gray, (612, 60 + self.drift * j), 8)
                     if self.odp[j][1] >= 2:
-                        pygame.draw.circle(self.game.screen, self.game.gray, (620, 40 + self.drift * j), 8)
+                        pygame.draw.circle(self.game.screen, self.game.gray, (632, 40 + self.drift * j), 8)
                         if self.odp[j][1] == 3:
-                            pygame.draw.circle(self.game.screen, self.game.gray, (620, 60 + self.drift * j), 8)
+                            pygame.draw.circle(self.game.screen, self.game.gray, (632, 60 + self.drift * j), 8)
             elif self.odp[j][1] >= 1:
-                pygame.draw.circle(self.game.screen, self.game.gray, (600, 40 + self.drift * j), 8)
+                pygame.draw.circle(self.game.screen, self.game.gray, (612, 40 + self.drift * j), 8)
                 if self.odp[j][1] >= 2:
-                    pygame.draw.circle(self.game.screen, self.game.gray, (600, 60 + self.drift * j), 8)
+                    pygame.draw.circle(self.game.screen, self.game.gray, (612, 60 + self.drift * j), 8)
                     if self.odp[j][1] >= 3:
-                        pygame.draw.circle(self.game.screen, self.game.gray, (620, 40 + self.drift * j), 8)
+                        pygame.draw.circle(self.game.screen, self.game.gray, (632, 40 + self.drift * j), 8)
                         if self.odp[j][1] == 4:
-                            pygame.draw.circle(self.game.screen, self.game.gray, (620, 60 + self.drift * j), 8)
+                            pygame.draw.circle(self.game.screen, self.game.gray, (632, 60 + self.drift * j), 8)
