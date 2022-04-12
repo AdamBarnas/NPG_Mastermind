@@ -5,6 +5,7 @@ class Sounds(object):
     def __init__(self, game):
         self.game = game
         self.volume = 0.1
+        self.i = 0
 
     def music(self):
         pygame.mixer.music.set_volume(self.volume)
@@ -12,12 +13,21 @@ class Sounds(object):
         if self.game.win == 2:
 
             # muzyka zwycięstwa
-            pygame.mixer.music.load("music/Xs-s-qRtRn.mp3")
+            pygame.mixer.music.load("music/win.mp3")
+            pygame.mixer.music.play()
 
         elif self.game.win == 1:
 
             pygame.mixer.music.set_volume(0.15)
             # muzyka tło
-            pygame.mixer.music.load("music/Regular_Show.mp3")
-            pygame.mixer.music.queue("music/Regular_Show.mp3", loops=15)
-        pygame.mixer.music.play()
+
+            if self.i == 0:
+                pygame.mixer.music.load("music/hard_1.mp3")
+                self.i = 1
+            elif self.i == 1:
+                pygame.mixer.music.load("music/hard_2.mp3")
+                self.i = 2
+            elif self.i == 2:
+                pygame.mixer.music.load("music/hard_3.mp3")
+                self.i = 0
+            pygame.mixer.music.play()

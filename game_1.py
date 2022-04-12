@@ -78,6 +78,8 @@ class Game(object):
 
     def tick(self):
         self.player.tick()
+        if not pygame.mixer.music.get_busy():
+            self.sounds.music()
 
     def draw(self):
         self.interface.draw()
