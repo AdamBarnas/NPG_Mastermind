@@ -7,12 +7,12 @@ class Interface(object):
         self.game = game
         # Colours
 
-        self.yellow = (255, 255, 0)
-        self.red = (255, 0, 0)
-        self.green = (0, 255, 0)
-        self.blue = (0, 0, 255)
-        self.orange = (255, 128, 0)
-        self.purple = (200, 0, 255)
+        self.yellow = (255, 147, 23)
+        self.red = (59, 206,172)
+        self.green = (14, 173, 105)
+        self.blue = (248, 214, 176)
+        self.orange = (238, 66, 102)
+        self.purple = (84, 13, 110)
         self.white = (255, 255, 255)
         self.gray = (128, 128, 128)
 
@@ -21,8 +21,11 @@ class Interface(object):
         self.game.screen.blit(background_easy, (0,0))
 
         game_block = pygame.image.load("img/easy_game_rows.png")
-        self.game.screen.blit(game_block, (400-35,15))
+        self.game.screen.blit(game_block, (400-35,8))
 
         rules_easy = pygame.image.load("img/easy_rules.png")
         rules_easy = pygame.transform.rotate(rules_easy, 90)
         self.game.screen.blit(rules_easy, (29, 400))
+
+        result_block = pygame.image.load("img/easy_result.png")
+        self.game.screen.blit(result_block, (600-8,15))

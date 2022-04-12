@@ -29,12 +29,12 @@ class Game(object):
         self.sounds = Sounds(self)
 
         # Colours
-        self.yellow = (255, 255, 0)
-        self.red = (255, 0, 0)
-        self.green = (0, 255, 0)
-        self.blue = (0, 0, 255)
-        self.orange = (255, 128, 0)
-        self.purple = (200, 0, 255)
+        self.yellow = (255, 147, 23)
+        self.red = (59, 206, 172)
+        self.green = (14, 173, 105)
+        self.blue = (248, 214, 176)
+        self.orange = (238, 66, 102)
+        self.purple = (84, 13, 110)
         self.white = (255, 255, 255)
         self.gray = (128, 128, 128)
 
