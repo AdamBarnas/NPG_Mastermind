@@ -12,8 +12,8 @@
     <list default="true" id="98ef3575-80b0-4021-a596-5c43be7ed8ac" name="Changes" comment="grafiki cz1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/img/easy_background.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/easy_background.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/easy_game_rows.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/easy_game_rows.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +164,7 @@
       <workItem from="1649669316773" duration="198000" />
       <workItem from="1649669562762" duration="94000" />
       <workItem from="1649676777779" duration="1734000" />
-      <workItem from="1649760939691" duration="7286000" />
+      <workItem from="1649760939691" duration="9445000" />
     </task>
     <task id="LOCAL-00001" summary="mechanika gry">
       <created>1649449020093</created>
@@ -201,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649772219664</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="grafiki cz1">
+      <created>1649774728669</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649774728669</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +261,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="grafiki cz1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/workspace_xml$game_1.coverage" NAME="game_1 Coverage Results" MODIFIED="1649774305385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/workspace_xml$game_1.coverage" NAME="game_1 Coverage Results" MODIFIED="1649776893164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/workspace_xml$Laptop_game.coverage" NAME="Laptop game Coverage Results" MODIFIED="1649678462716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NPG_Mastermind$game_1.coverage" NAME="game_1 Coverage Results" MODIFIED="1649519535458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

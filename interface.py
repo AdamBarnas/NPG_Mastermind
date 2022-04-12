@@ -19,5 +19,10 @@ class Interface(object):
     def draw(self):
         background_easy = pygame.image.load("img/easy_background.png")
         self.game.screen.blit(background_easy, (0,0))
+
         game_block = pygame.image.load("img/easy_game_rows.png")
         self.game.screen.blit(game_block, (400-35,15))
+
+        rules_easy = pygame.image.load("img/easy_rules.png")
+        rules_easy = pygame.transform.rotate(rules_easy, 90)
+        self.game.screen.blit(rules_easy, (29, 400))
