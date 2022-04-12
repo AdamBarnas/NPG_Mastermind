@@ -17,6 +17,7 @@ class Interface(object):
         self.gray = (128, 128, 128)
 
     def draw(self):
-        pygame.draw.rect(self.game.screen, (50, 50, 50), pygame.Rect(0, 0, 800, 640))
+        background_easy = pygame.image.load("img/easy_background.png")
+        self.game.screen.blit(background_easy, (0,0))
         game_block = pygame.image.load("img/easy_game_rows.png")
-        self.game.screen.blit(game_block, (400-35,21))
+        self.game.screen.blit(game_block, (400-35,15))

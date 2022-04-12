@@ -175,7 +175,7 @@ class Player(object):
                                 self.game.win = 2
 
                             win_image = pygame.image.load("img/easy_win_cow.png")
-                            self.game.screen.blit(win_image,(400,320))
+                            self.game.screen.blit(win_image,(620,320+17))
 
                         elif self.odp[j][1] == 1:
                             pygame.draw.circle(self.game.screen, self.game.gray, (620, 60 + self.drift * j), 8)
