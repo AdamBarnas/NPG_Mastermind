@@ -174,7 +174,9 @@ class Player(object):
                             if self.game.win == 1:
                                 self.game.win = 2
 
-                            pygame.draw.circle(self.game.screen, self.game.green, (400, 320), 100)
+                            win_image = pygame.image.load("img/easy_win_cow.png")
+                            self.game.screen.blit(win_image,(400,320))
+
                         elif self.odp[j][1] == 1:
                             pygame.draw.circle(self.game.screen, self.game.gray, (620, 60 + self.drift * j), 8)
                     elif self.odp[j][1] >= 1:
