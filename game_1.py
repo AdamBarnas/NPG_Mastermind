@@ -8,7 +8,7 @@ print(pygame.__version__)
 
 class Game(object):
     def __init__(self):
-        #Conf
+        # Conf
         self.res = (800, 640)
         self.tickrate = 1/120.0
         # 1/max_fps
