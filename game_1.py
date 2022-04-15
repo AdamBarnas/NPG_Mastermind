@@ -22,7 +22,7 @@ class Game(object):
         self.kwadrat = pygame.Rect(30, 30, 42, 42)
         self.R = self.G = self.B = 255
         self.n = 0
-        self.win = 1
+        self.win = 3
 
         self.player = Player(self)
         self.interface = Interface(self)
@@ -60,6 +60,10 @@ class Game(object):
                     self.player.ruch("d")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
                     self.player.ruch("a")
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_BACKSPACE:
+                    self.player.ruch("b")
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
+                    self.player.ruch("e")
 
             # tick
             self.cl_dt += self.clock.tick()/1000

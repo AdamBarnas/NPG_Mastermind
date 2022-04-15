@@ -94,6 +94,10 @@ class Player(object):
             self.game.kwadrat.x += 50
         elif direction == "a" and self.game.kwadrat.x > 30:
             self.game.kwadrat.x -= 50
+        elif direction == "b":
+            print("cofnij")
+        elif direction == "e":
+            print("zapisz")
         elif direction == "space":
 
             # wybór koloru
@@ -171,7 +175,7 @@ class Player(object):
                             pygame.draw.circle(self.game.screen, self.game.white, (620, 60 + self.drift * j), 8)
 
                             # wygrana
-                            if self.game.win == 1:
+                            if self.game.win == 1 or self.game.win == 3 or self.game.win == 4:
                                 self.game.win = 2
 
                             pygame.draw.circle(self.game.screen, self.game.green, (400, 320), 100)
