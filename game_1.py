@@ -3,6 +3,7 @@ import pygame
 from player import Player
 from interface import Interface
 from sounds import Sounds
+from menu import Menu
 
 print(pygame.__version__)
 
@@ -23,10 +24,14 @@ class Game(object):
         self.R = self.G = self.B = 255
         self.n = 0
         self.win = 1
+        self.level = 0
+        self.max = 1
+        self.dif = [350, 300]
 
         self.player = Player(self)
         self.interface = Interface(self)
         self.sounds = Sounds(self)
+        self.menu = Menu(self)
 
         # Colours
         self.yellow = (255, 255, 0)
@@ -61,9 +66,9 @@ class Game(object):
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
                     self.player.ruch("a")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_BACKSPACE:
-                    self.player.ruch("b")
+                    self.player.ruch("back")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
-                    self.player.ruch("e")
+                    self.player.ruch("enter")
 
             # tick
             self.cl_dt += self.clock.tick()/1000
@@ -71,15 +76,19 @@ class Game(object):
                 self.tick()
                 self.cl_dt -= self.tickrate
 
-            # draw
+            # draw and sound
             self.screen.fill((0, 0, 0))
             self.draw()
+            self.play()
             pygame.display.flip()
 
-            if self.win == 2:
-                self.sounds.music()
-                self.win = 0
-
+            # difficulty
+            if self.level != 0 and self.win == 1:
+                self.max = 8
+            elif self.level != 0 and self.win == 3:
+                self.max = 10
+            elif self.level != 0 and self.win == 4:
+                self.max = 12
     def tick(self):
         self.player.tick()
         if not pygame.mixer.music.get_busy():
@@ -87,7 +96,20 @@ class Game(object):
 
     def draw(self):
         self.interface.draw()
-        self.player.draw()
+
+        if self.level == 0:
+            self.menu.difficulty()
+        else:
+            self.player.draw()
+
+    def play(self):
+        if self.win == 2:
+            self.sounds.music()
+            self.win = 0
+
+    def forceplay(self):
+        self.sounds.music()
+
 
 if __name__ == "__main__":
     Game()
