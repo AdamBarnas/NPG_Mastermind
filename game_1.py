@@ -22,7 +22,7 @@ class Game(object):
         self.kwadrat = pygame.Rect(30, 30, 42, 42)
         self.R = self.G = self.B = 255
         self.n = 0
-        self.win = 3
+        self.win = 1
 
         self.player = Player(self)
         self.interface = Interface(self)

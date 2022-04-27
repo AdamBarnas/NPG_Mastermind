@@ -175,7 +175,7 @@ class Player(object):
                             pygame.draw.circle(self.game.screen, self.game.white, (620, 60 + self.drift * j), 8)
 
                             # wygrana
-                            if self.game.win == 1 or self.game.win == 3 or self.game.win == 4:
+                            if self.game.win == 1 or self.game.win == 3 or self.game.win == 4 or self.game.win == 5:
                                 self.game.win = 2
 
                             pygame.draw.circle(self.game.screen, self.game.green, (400, 320), 100)

@@ -60,3 +60,7 @@ class Sounds(object):
                 pygame.mixer.music.load("music/easy_3.mp3")
                 self.i = 0
             pygame.mixer.music.play()
+        elif self.game.win == 5:
+            pygame.mixer.music.set_volume(0.25)
+            pygame.mixer.music.load("music/easy_4.mp3")
+            pygame.mixer.music.play()
