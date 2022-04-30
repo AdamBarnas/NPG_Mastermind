@@ -56,12 +56,12 @@ class Player(object):
 
         if self.game.n < 250:
             self.game.R -= 4
-            self.game.G -= 4
-            self.game.B -= 4
+            #self.game.G -= 4
+            #self.game.B -= 4
         elif self.game.n < 500:
             self.game.R += 4
-            self.game.G += 4
-            self.game.B += 4
+            #self.game.G += 4
+            #self.game.B += 4
         else:
             self.game.n = 0
         self.game.n += 4
@@ -174,8 +174,8 @@ class Player(object):
                             if self.game.win == 1:
                                 self.game.win = 2
 
-                            win_image = pygame.image.load("img/easy_win_cow.png")
-                            self.game.screen.blit(win_image,(620,320+17))
+                            win_image = pygame.image.load("img/easy_win_cow2.png")
+                            self.game.screen.blit(win_image,(280,180))
 
                         elif self.odp[j][1] == 1:
                             pygame.draw.circle(self.game.screen, self.game.gray, (632, 60 + self.drift * j), 8)

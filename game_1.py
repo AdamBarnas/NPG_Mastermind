@@ -29,7 +29,7 @@ class Game(object):
         self.sounds = Sounds(self)
 
         # Colours
-        self.yellow = (255, 147, 23)
+        self.yellow = (255, 112, 67)
         self.red = (59, 206, 172)
         self.green = (14, 173, 105)
         self.blue = (248, 214, 176)
