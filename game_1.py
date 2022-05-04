@@ -23,9 +23,9 @@ class Game(object):
         self.kwadrat = pygame.Rect(30, 30, 42, 42)
         self.R = self.G = self.B = 255
         self.n = 0
-        self.win = 1
+        self.win = 0
         self.level = 0
-        self.max = 1
+        self.max = 12
         self.dif = [350, 300]
 
         self.player = Player(self)

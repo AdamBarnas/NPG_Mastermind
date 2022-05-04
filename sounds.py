@@ -55,7 +55,7 @@ class Sounds(object):
                 pygame.mixer.music.play()
 
             elif self.game.win == 4:
-                pygame.mixer.music.set_volume(0.25)
+                pygame.mixer.music.set_volume(0.45)
                 # muzyka easy
 
                 if self.i == 0:
