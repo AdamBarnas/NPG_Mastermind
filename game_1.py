@@ -4,7 +4,6 @@ import pickle
 from player import Player
 from interface import Interface
 from sounds import Sounds
-from menu import Menu
 
 print(pygame.__version__)
 
@@ -32,7 +31,6 @@ class Game(object):
         self.player = Player(self)
         self.interface = Interface(self)
         self.sounds = Sounds(self)
-        self.menu = Menu(self)
 
         # Colours
         self.yellow = (255, 112, 67)
@@ -52,7 +50,6 @@ class Game(object):
                 if event.type == pygame.QUIT:
                     self.save()
                     sys.exit(0)
-
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_d:
                     self.player.ruch("d")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_a:
@@ -110,7 +107,7 @@ class Game(object):
         self.interface.draw()
 
         if self.level == 0:
-            self.menu.difficulty()
+            self.interface.difficulty()
         else:
             self.player.draw()
 

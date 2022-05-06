@@ -64,10 +64,12 @@ class Player(object):
             elif direction == "a" and self.game.dif[0] > 250:
                 self.game.dif[0] -= 100
                 self.game.dif[1] = 300
-            elif direction == "s" and self.game.dif[0] == 350 and self.game.dif[1] == 300:
+            elif direction == "s" and self.game.dif[1] < 350:
                 self.game.dif[1] += 50
-            elif direction == "w" and self.game.dif[0] == 350 and self.game.dif[1] == 350:
+                self.game.dif[0] = 350
+            elif direction == "w" and self.game.dif[1] > 250:
                 self.game.dif[1] -= 50
+                self.game.dif[0] = 350
 
             elif direction == "enter":
                 self.game.level = 1
@@ -78,8 +80,17 @@ class Player(object):
                         self.game.win = 4
                     elif self.game.dif[0] == 450:
                         self.game.win = 1
-                else:
+                elif self.game.dif[1] == 250:
                     self.game.read()
+                    if self.game.win == 0 or self.game.win == 6:
+                        self.game.level = 0
+                    else:
+                        print(self.kombinacja)
+                        self.ruch("space")
+                        self.ruch("back")
+                elif self.game.dif[1] == 350:
+                    pass
+                    # statystyki
                 self.game.forceplay()
 
         else:
@@ -202,7 +213,7 @@ class Player(object):
                         if self.odp[j][1] == 4:
                             pygame.draw.circle(self.game.screen, self.game.gray, (self.xdis + 20, 60 + self.drift * j), 8)
             # przegrana
-            if self.row == self.game.max:
+            if self.row == self.game.max and not self.odp[self.row][0] == 4:
                 if j == self.row - 1 and self.game.win == 1 or self.game.win == 3 or self.game.win == 4:
                     self.game.win = 5
                     print("przegrana")

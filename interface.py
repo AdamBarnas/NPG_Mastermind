@@ -16,6 +16,10 @@ class Interface(object):
         self.white = (255, 255, 255)
         self.gray = (128, 128, 128)
 
+    def difficulty(self):
+        color = (self.game.R, self.game.G, self.game.B)
+        pygame.draw.rect(self.game.screen, color, pygame.Rect(self.game.dif[0], self.game.dif[1], 100, 20))
+
     def draw(self):
         if self.game.level == 0:
             pygame.draw.rect(self.game.screen, self.gray, (800, 640, 0, 0))
