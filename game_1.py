@@ -123,20 +123,27 @@ class Game(object):
         self.sounds.music()
 
     def save(self):
-        pickle.dump(self.player.lista, open("lista.data", "wb"))
-        pickle.dump(self.player.odp, open("odp.data", "wb"))
-        pickle.dump(self.player.row, open("row.data", "wb"))
-        pickle.dump(self.player.col, open("col.data", "wb"))
-        pickle.dump(self.player.kombinacja, open("kombinacja.data", "wb"))
-        pickle.dump(self.win, open("win.data", "wb"))
+        pickle.dump(self.player.lista, open("savefiles/lista.data", "wb"))
+        pickle.dump(self.player.odp, open("savefiles/odp.data", "wb"))
+        pickle.dump(self.player.row, open("savefiles/row.data", "wb"))
+        pickle.dump(self.player.col, open("savefiles/col.data", "wb"))
+        pickle.dump(self.player.kombinacja, open("savefiles/kombinacja.data", "wb"))
+        pickle.dump(self.win, open("savefiles/win.data", "wb"))
 
     def read(self):
-        self.player.lista = pickle.load(open("lista.data", "rb"))
-        self.player.odp = pickle.load(open("odp.data", "rb"))
-        self.player.row = pickle.load(open("row.data", "rb"))
-        self.player.col = pickle.load(open("col.data", "rb"))
-        self.player.kombinacja = pickle.load(open("kombinacja.data", "rb"))
-        self.win = pickle.load(open("win.data", "rb"))
+        self.player.lista = pickle.load(open("savefiles/lista.data", "rb"))
+        self.player.odp = pickle.load(open("savefiles/odp.data", "rb"))
+        self.player.row = pickle.load(open("savefiles/row.data", "rb"))
+        self.player.col = pickle.load(open("savefiles/col.data", "rb"))
+        self.player.kombinacja = pickle.load(open("savefiles/kombinacja.data", "rb"))
+        self.win = pickle.load(open("savefiles/win.data", "rb"))
+
+    def clear(self):
+        self.player.lista = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0],
+                      [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+        self.player.odp = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
+        self.player.kombinacja = [0, 0, 0, 0]
+        self.player.row = self.player.col = self.win = 0
 
 if __name__ == "__main__":
     Game()
