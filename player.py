@@ -60,17 +60,26 @@ class Player(object):
         if self.game.level == 0:
             if direction == "d" and self.game.dif[0] < 450:
                 self.game.dif[0] += 100
+                self.game.dif[1] = 300
             elif direction == "a" and self.game.dif[0] > 250:
                 self.game.dif[0] -= 100
+                self.game.dif[1] = 300
+            elif direction == "s" and self.game.dif[0] == 350 and self.game.dif[1] == 300:
+                self.game.dif[1] += 50
+            elif direction == "w" and self.game.dif[0] == 350 and self.game.dif[1] == 350:
+                self.game.dif[1] -= 50
 
             elif direction == "enter":
                 self.game.level = 1
-                if self.game.dif[0] == 350:
-                    self.game.win = 3
-                elif self.game.dif[0] == 250:
-                    self.game.win = 4
-                elif self.game.dif[0] == 450:
-                    self.game.win = 1
+                if self.game.dif[1] == 300:
+                    if self.game.dif[0] == 350:
+                        self.game.win = 3
+                    elif self.game.dif[0] == 250:
+                        self.game.win = 4
+                    elif self.game.dif[0] == 450:
+                        self.game.win = 1
+                else:
+                    self.game.read()
                 self.game.forceplay()
 
         else:
@@ -79,14 +88,11 @@ class Player(object):
             elif direction == "a" and self.game.kwadrat.x > 30:
                 self.game.kwadrat.x -= 50
             elif direction == "back":
-                print("cofnij")
                 if 0 < self.col <= 4:
                     self.col -= 1
                     self.lista[self.row][self.col] = 0
 
             elif direction == "enter":
-                print("zapisz")
-
                 # nowy wiersz
                 if self.lista[self.row][3] != 0 and self.row < self.game.max:
                     self.spr()
@@ -173,8 +179,6 @@ class Player(object):
                             # wygrana
                             if self.game.win == 1 or self.game.win == 3 or self.game.win == 4:
                                 self.game.win = 2
-                                wincow = pygame.image.load("img/easy_win_cow2.png")
-                                self.game.screen.blit(wincow, (280, 184))
                                 print("wygrana")
 
                         elif self.odp[j][1] == 1:
@@ -199,6 +203,6 @@ class Player(object):
                             pygame.draw.circle(self.game.screen, self.game.gray, (self.xdis + 20, 60 + self.drift * j), 8)
             # przegrana
             if self.row == self.game.max:
-                print(self.game.win)
                 if j == self.row - 1 and self.game.win == 1 or self.game.win == 3 or self.game.win == 4:
                     self.game.win = 5
+                    print("przegrana")

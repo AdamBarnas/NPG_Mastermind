@@ -17,7 +17,6 @@ class Interface(object):
         self.gray = (128, 128, 128)
 
     def draw(self):
-        # print(self.game.win)
         if self.game.level == 0:
             pygame.draw.rect(self.game.screen, self.gray, (800, 640, 0, 0))
         else:
@@ -58,6 +57,6 @@ class Interface(object):
                 wincow = pygame.image.load("img/easy_win_cow2.png")
                 self.game.screen.blit(wincow, (280, 184))
 
-            if self.game.win == 5:
+            if self.game.win == 6:
                 loosecow = pygame.image.load("img/easy_loose_cow2.png")
                 self.game.screen.blit(loosecow, (280, 184))

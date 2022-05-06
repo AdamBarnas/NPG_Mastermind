@@ -23,6 +23,12 @@ class Sounds(object):
                 pygame.mixer.music.load("music/win.mp3")
                 pygame.mixer.music.play()
 
+            if self.game.win == 5:
+                pygame.mixer.music.set_volume(0.1)
+                # muzyka przegranej
+                pygame.mixer.music.load("music/defeat.mp3")
+                pygame.mixer.music.play()
+
             elif self.game.win == 1:
 
                 pygame.mixer.music.set_volume(0.15)

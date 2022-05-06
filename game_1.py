@@ -1,5 +1,6 @@
 import sys
 import pygame
+import pickle
 from player import Player
 from interface import Interface
 from sounds import Sounds
@@ -49,14 +50,15 @@ class Game(object):
             # eventy
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
+                    self.save()
                     sys.exit(0)
+
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_d:
                     self.player.ruch("d")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_a:
                     self.player.ruch("a")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_w:
                     self.player.ruch("w")
-                    self.sounds.music()
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
                     self.player.ruch("s")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
@@ -65,11 +67,21 @@ class Game(object):
                     self.player.ruch("d")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
                     self.player.ruch("a")
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN:
+                    self.player.ruch("s")
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
+                    self.player.ruch("w")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_BACKSPACE:
                     self.player.ruch("back")
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
                     self.player.ruch("enter")
-
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                    self.save()
+                    sys.exit(0)
+                '''elif event.type == pygame.KEYDOWN and event.key == pygame.K_x:
+                    self.save()
+                elif event.type == pygame.KEYDOWN and event.key == pygame.K_z:
+                    self.read()'''
             # tick
             self.cl_dt += self.clock.tick()/1000
             while self.cl_dt > self.tickrate:
@@ -106,10 +118,28 @@ class Game(object):
         if self.win == 2:
             self.sounds.music()
             self.win = 0
+        if self.win == 5:
+            self.sounds.music()
+            self.win = 6
 
     def forceplay(self):
         self.sounds.music()
 
+    def save(self):
+        pickle.dump(self.player.lista, open("lista.data", "wb"))
+        pickle.dump(self.player.odp, open("odp.data", "wb"))
+        pickle.dump(self.player.row, open("row.data", "wb"))
+        pickle.dump(self.player.col, open("col.data", "wb"))
+        pickle.dump(self.player.kombinacja, open("kombinacja.data", "wb"))
+        pickle.dump(self.win, open("win.data", "wb"))
+
+    def read(self):
+        self.player.lista = pickle.load(open("lista.data", "rb"))
+        self.player.odp = pickle.load(open("odp.data", "rb"))
+        self.player.row = pickle.load(open("row.data", "rb"))
+        self.player.col = pickle.load(open("col.data", "rb"))
+        self.player.kombinacja = pickle.load(open("kombinacja.data", "rb"))
+        self.win = pickle.load(open("win.data", "rb"))
 
 if __name__ == "__main__":
     Game()
