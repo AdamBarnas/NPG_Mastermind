@@ -19,7 +19,10 @@ class Interface(object):
     def draw(self):
         # print(self.game.win)
         if self.game.level == 0:
-            pygame.draw.rect(self.game.screen, self.gray, (800, 640, 0, 0))
+            #pygame.draw.rect(self.game.screen, self.gray, (800, 640, 0, 0))
+            menu = pygame.image.load("img/menu.png")
+            self.game.screen.blit(menu, (0, 0))
+
         else:
             font1 = 'fonts/Pixeltype.ttf'
             font_big = pygame.font.Font(font1, 50)
@@ -33,12 +36,14 @@ class Interface(object):
                 result_block = pygame.image.load("img/easy_result.png")
                 cow = pygame.image.load("img/easy_win_cow.png")
 
+
             if self.game.win == 1:
                 background = pygame.image.load("img/hard_background.png")
                 game_block = pygame.image.load("img/hard_game_rows.png")
                 rules = pygame.image.load("img/hard_rules.png")
                 result_block = pygame.image.load("img/hard_result.png")
                 cow = pygame.image.load("img/easy_win_cow.png")
+
 
             if self.game.win == 4:
                 background = pygame.image.load("img/veasy_background.png")
@@ -47,17 +52,18 @@ class Interface(object):
                 result_block = pygame.image.load("img/veasy_result.png")
                 cow = pygame.image.load("img/easy_win_cow.png")
 
+
             if self.game.win == 1 or self.game.win == 3 or self.game.win == 4:
                 self.game.screen.blit(background, (0, 0))
                 self.game.screen.blit(game_block, (400 - 27, 15))
                 self.game.screen.blit(rules, (29, 400))
                 self.game.screen.blit(result_block, (600 - 8, 15))
-                self.game.screen.blit(cow, (655, 250))
+
 
             if self.game.win == 0:
                 wincow = pygame.image.load("img/easy_win_cow2.png")
-                self.game.screen.blit(wincow, (280, 184))
+                self.game.screen.blit(winpic, (280, 184))
 
             if self.game.win == 5:
                 loosecow = pygame.image.load("img/easy_loose_cow2.png")
-                self.game.screen.blit(loosecow, (280, 184))
+                self.game.screen.blit(loosepic, (280, 184))
