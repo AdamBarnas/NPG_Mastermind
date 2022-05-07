@@ -16,8 +16,11 @@ class Interface(object):
         self.white = (255, 255, 255)
         self.gray = (128, 128, 128)
 
+    def difficulty(self):
+        color = (self.game.R, self.game.G, self.game.B)
+        pygame.draw.rect(self.game.screen, color, pygame.Rect(self.game.dif[0], self.game.dif[1], 100, 20))
+
     def draw(self):
-        # print(self.game.win)
         if self.game.level == 0:
             #pygame.draw.rect(self.game.screen, self.gray, (800, 640, 0, 0))
             menu = pygame.image.load("img/menu.png")
@@ -64,6 +67,6 @@ class Interface(object):
                 wincow = pygame.image.load("img/easy_win_cow2.png")
                 self.game.screen.blit(winpic, (280, 184))
 
-            if self.game.win == 5:
+            if self.game.win == 6:
                 loosecow = pygame.image.load("img/easy_loose_cow2.png")
                 self.game.screen.blit(loosepic, (280, 184))
