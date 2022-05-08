@@ -65,8 +65,8 @@ class Interface(object):
 
             if self.game.win == 0:
                 wincow = pygame.image.load("img/easy_win_cow2.png")
-                self.game.screen.blit(winpic, (280, 184))
+                self.game.screen.blit(wincow, (280, 184))
 
             if self.game.win == 6:
                 loosecow = pygame.image.load("img/easy_loose_cow2.png")
-                self.game.screen.blit(loosepic, (280, 184))
+                self.game.screen.blit(loosecow, (280, 184))
