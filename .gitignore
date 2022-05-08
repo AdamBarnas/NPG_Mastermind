@@ -1,0 +1,6 @@
+
+savefiles/win.data
+savefiles/row.data
+*.data
+*.pyc
+.idea/workspace.xml
