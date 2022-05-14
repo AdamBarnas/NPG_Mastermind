@@ -10,7 +10,7 @@ class Sounds(object):
 
     def music(self):
 
-        if self.game.level == 0:
+        if self.game.level == 0 or self.game.level == 3:
             pygame.mixer.music.set_volume(0.1)
             pygame.mixer.music.load("music/easy_4.mp3")
             pygame.mixer.music.play()
