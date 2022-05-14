@@ -1,0 +1,1 @@
+w tym folderze są pliki zapisu

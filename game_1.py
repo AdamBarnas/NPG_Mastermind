@@ -76,7 +76,7 @@ class Game(object):
                     self.save()
                     sys.exit(0)
                 '''elif event.type == pygame.KEYDOWN and event.key == pygame.K_x:
-                    self.save()
+                    self.save.md()
                 elif event.type == pygame.KEYDOWN and event.key == pygame.K_z:
                     self.read()'''
             # tick
