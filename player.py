@@ -59,17 +59,19 @@ class Player(object):
     def ruch(self, direction):
         if self.game.level == 0:
             if direction == "d" and self.game.dif[0] < 450:
+                if self.game.dif[1] == 450:
+                    self.game.dif[0] += 100
                 self.game.dif[0] += 100
-                self.game.dif[1] = 300
             elif direction == "a" and self.game.dif[0] > 250:
+                if self.game.dif[1] == 450:
+                    self.game.dif[0] -= 100
                 self.game.dif[0] -= 100
-                self.game.dif[1] = 300
-            elif direction == "s" and self.game.dif[1] < 350:
-                self.game.dif[1] += 50
-                self.game.dif[0] = 350
-            elif direction == "w" and self.game.dif[1] > 250:
-                self.game.dif[1] -= 50
-                self.game.dif[0] = 350
+            elif direction == "s" and self.game.dif[1] < 450:
+                if self.game.dif[0] == 350:
+                    self.game.dif[0] = 250
+                self.game.dif[1] += 150
+            elif direction == "w" and self.game.dif[1] > 350:
+                self.game.dif[1] -= 150
 
             elif direction == "enter":
                 self.game.level = 1
@@ -80,7 +82,7 @@ class Player(object):
                         self.game.win = 4
                     elif self.game.dif[0] == 450:
                         self.game.win = 1
-                elif self.game.dif[1] == 250:
+                elif self.game.dif[1] == 450 and self.game.dif[0] == 250:
                     self.game.read()
                     if self.game.win == 0 or self.game.win == 6:
                         self.game.clear()
@@ -90,7 +92,7 @@ class Player(object):
                         print(self.kombinacja)
                         self.ruch("space")
                         self.ruch("back")
-                elif self.game.dif[1] == 350:
+                elif self.game.dif[1] == 450 and self.game.dif[0] == 450:
                     pass
                     # statystyki
                 self.game.forceplay()

@@ -4,3 +4,5 @@ savefiles/row.data
 *.data
 *.pyc
 .idea/workspace.xml
+savefiles/lista.data
+*.data
