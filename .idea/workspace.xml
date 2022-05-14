@@ -9,16 +9,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98ef3575-80b0-4021-a596-5c43be7ed8ac" name="Changes" comment="muzyka w tle">
+    <list default="true" id="98ef3575-80b0-4021-a596-5c43be7ed8ac" name="Changes" comment="zmiany w menu, bloku Rules i kosmetyczne zmiany w veasy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/col.data" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/game_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kombinacja.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lista.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/odp.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/row.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/win.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/savefiles/kombinacja.data" beforeDir="false" afterPath="$PROJECT_DIR$/savefiles/kombinacja.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/savefiles/win.data" beforeDir="false" afterPath="$PROJECT_DIR$/savefiles/win.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sounds.py" beforeDir="false" afterPath="$PROJECT_DIR$/sounds.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,7 @@
       <recent name="C:\Users\adambook\Documents\GitHub\NPG_Mastermind\music" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.play">
+  <component name="RunManager" selected="Python.Laptop game">
     <configuration name="Dom" type="PythonConfigurationType" factoryName="Python">
       <module name="NPG_Mastermind" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,7 +148,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\48729\PycharmProjects\Mastermind\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\gberg\Documents\GitHub\NPG_Mastermind\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -199,6 +197,10 @@
       <workItem from="1651694508381" duration="6257000" />
       <workItem from="1651821966703" duration="320000" />
       <workItem from="1651822553388" duration="6520000" />
+      <workItem from="1651911191480" duration="3773000" />
+      <workItem from="1651994986775" duration="3114000" />
+      <workItem from="1652177143688" duration="635000" />
+      <workItem from="1652515481498" duration="12543000" />
     </task>
     <task id="LOCAL-00001" summary="mechanika gry">
       <created>1649449020093</created>
@@ -235,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649709669974</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="zmiany w menu, bloku Rules i kosmetyczne zmiany w veasy">
+      <created>1651998213068</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651998213068</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,14 +294,15 @@
     <MESSAGE value="plik na dzwięki" />
     <MESSAGE value="strzałki" />
     <MESSAGE value="muzyka w tle" />
-    <option name="LAST_COMMIT_MESSAGE" value="muzyka w tle" />
+    <MESSAGE value="zmiany w menu, bloku Rules i kosmetyczne zmiany w veasy" />
+    <option name="LAST_COMMIT_MESSAGE" value="zmiany w menu, bloku Rules i kosmetyczne zmiany w veasy" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/workspace_xml$play.coverage" NAME="play Coverage Results" MODIFIED="1651831888102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/workspace_xml$play.coverage" NAME="play Coverage Results" MODIFIED="1652177781813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NPG_Mastermind$game_1.coverage" NAME="game_1 Coverage Results" MODIFIED="1649519535458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/workspace_xml$Dom.coverage" NAME="Dom Coverage Results" MODIFIED="1649761634068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/workspace_xml$Laptop_game.coverage" NAME="Laptop game Coverage Results" MODIFIED="1652529860067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/workspace_xml$game_1.coverage" NAME="game_1 Coverage Results" MODIFIED="1650987651965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/workspace_xml$Dom.coverage" NAME="Dom Coverage Results" MODIFIED="1649761634068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/workspace_xml$game.coverage" NAME="game Coverage Results" MODIFIED="1649802453322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/workspace_xml$Laptop_game.coverage" NAME="Laptop game Coverage Results" MODIFIED="1651511476006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

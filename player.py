@@ -59,17 +59,19 @@ class Player(object):
     def ruch(self, direction):
         if self.game.level == 0:
             if direction == "d" and self.game.dif[0] < 450:
+                if self.game.dif[1] == 450:
+                    self.game.dif[0] += 100
                 self.game.dif[0] += 100
-                self.game.dif[1] = 300
             elif direction == "a" and self.game.dif[0] > 250:
+                if self.game.dif[1] == 450:
+                    self.game.dif[0] -= 100
                 self.game.dif[0] -= 100
-                self.game.dif[1] = 300
-            elif direction == "s" and self.game.dif[1] < 350:
-                self.game.dif[1] += 50
-                self.game.dif[0] = 350
-            elif direction == "w" and self.game.dif[1] > 250:
-                self.game.dif[1] -= 50
-                self.game.dif[0] = 350
+            elif direction == "s" and self.game.dif[1] < 450:
+                if self.game.dif[0] == 350:
+                    self.game.dif[0] = 250
+                self.game.dif[1] += 150
+            elif direction == "w" and self.game.dif[1] > 350:
+                self.game.dif[1] -= 150
 
             elif direction == "enter":
                 self.game.level = 1
@@ -80,7 +82,7 @@ class Player(object):
                         self.game.win = 4
                     elif self.game.dif[0] == 450:
                         self.game.win = 1
-                elif self.game.dif[1] == 250:
+                elif self.game.dif[1] == 450 and self.game.dif[0] == 250:
                     self.game.read()
                     if self.game.win == 0 or self.game.win == 6:
                         self.game.clear()
@@ -90,9 +92,10 @@ class Player(object):
                         print(self.kombinacja)
                         self.ruch("space")
                         self.ruch("back")
-                elif self.game.dif[1] == 350:
-                    pass
+                elif self.game.dif[1] == 450 and self.game.dif[0] == 450:
                     # statystyki
+                    self.game.level = 3
+                    self.game.showstat()
                 self.game.forceplay()
         elif self.game.level == 2:
             if direction == "enter":
@@ -100,6 +103,9 @@ class Player(object):
                 self.szyfr()
                 self.game.save()
                 self.game.level = 0
+        elif self.game.level == 3:
+            self.game.level = 0
+
         else:
             if direction == "d" and self.game.kwadrat.x < 279:
                 self.game.kwadrat.x += 50
@@ -151,25 +157,26 @@ class Player(object):
         print(self.odp)
 
     def draw(self):
-        color = (self.game.R, self.game.G, self.game.B)
-        pygame.draw.rect(self.game.screen, color, self.game.kwadrat)
 
-        # interface
-        pygame.draw.circle(self.game.screen, self.game.yellow, (50, 50), 20)
-        pygame.draw.circle(self.game.screen, self.game.red, (100, 50), 20)
-        pygame.draw.circle(self.game.screen, self.game.orange, (150, 50), 20)
-        pygame.draw.circle(self.game.screen, self.game.blue, (200, 50), 20)
-        pygame.draw.circle(self.game.screen, self.game.green, (250, 50), 20)
-        pygame.draw.circle(self.game.screen, self.game.purple, (300, 50), 20)
+        if self.game.level == 1:
+            color = (self.game.R, self.game.G, self.game.B)
+            pygame.draw.rect(self.game.screen, color, self.game.kwadrat)
 
-        # new ones
-        if self.row <= self.game.max:
-            self.zmienna = self.row + 1
-        else:
-            self.zmienna = self.row
+            # interface
+            pygame.draw.circle(self.game.screen, self.game.yellow, (50, 50), 20)
+            pygame.draw.circle(self.game.screen, self.game.red, (100, 50), 20)
+            pygame.draw.circle(self.game.screen, self.game.orange, (150, 50), 20)
+            pygame.draw.circle(self.game.screen, self.game.blue, (200, 50), 20)
+            pygame.draw.circle(self.game.screen, self.game.green, (250, 50), 20)
+            pygame.draw.circle(self.game.screen, self.game.purple, (300, 50), 20)
 
-        for j in range(0, self.row + 1):
-            if self.game.level == 1:
+            # new ones
+            if self.row <= self.game.max:
+                self.zmienna = self.row + 1
+            else:
+                self.zmienna = self.row
+
+            for j in range(0, self.row + 1):
                 for i in range(0, 4):
                     if self.lista[j][i] == 1:
                         pygame.draw.circle(self.game.screen, self.game.yellow, (400 + i*self.drift, 50 + j*self.drift), 20)
@@ -197,9 +204,11 @@ class Player(object):
 
                                 # wygrana
                                 if self.game.win == 1 or self.game.win == 3 or self.game.win == 4:
+                                    self.game.stat()
                                     self.game.win = 2
                                     print("wygrana")
                                     self.game.level = 2
+                                    self.game.stat()
 
                             elif self.odp[j][1] == 1:
                                 pygame.draw.circle(self.game.screen, self.game.gray, (self.xdis + 20, 60 + self.drift * j), 8)
@@ -224,6 +233,8 @@ class Player(object):
                 # przegrana
                 if self.row == self.game.max and not self.odp[self.row - 1][0] == 4:
                     if j == self.row - 1 and self.game.win == 1 or self.game.win == 3 or self.game.win == 4:
+                        self.game.stat()
                         self.game.win = 5
                         print("przegrana")
                         self.game.level = 2
+                        self.game.stat()

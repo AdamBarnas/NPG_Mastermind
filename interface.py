@@ -5,29 +5,41 @@ class Interface(object):
 
     def __init__(self, game):
         self.game = game
-        # Colours
 
-        self.yellow = (255, 112, 23)
-        self.red = (59, 206, 172)
-        self.green = (14, 173, 105)
-        self.blue = (248, 214, 176)
-        self.orange = (238, 66, 102)
-        self.purple = (84, 13, 110)
-        self.white = (255, 255, 255)
-        self.gray = (128, 128, 128)
 
     def difficulty(self):
         color = (self.game.R, self.game.G, self.game.B)
         pygame.draw.rect(self.game.screen, color, pygame.Rect(self.game.dif[0], self.game.dif[1], 100, 20))
 
     def draw(self):
+
+        font1 = 'fonts/Pixeltype.ttf'
+        font_big = pygame.font.Font(font1, 50)
+        font_mid = pygame.font.Font(font1, 40)
+        font_small = pygame.font.Font(font1, 30)
+
         if self.game.level == 0:
-            pygame.draw.rect(self.game.screen, self.gray, (800, 640, 0, 0))
+            # pygame.draw.rect(self.game.screen, self.gray, (800, 640, 0, 0))
+            menu = pygame.image.load("img/menu.png")
+            self.game.screen.blit(menu, (0, 0))
+
+        elif self.game.level == 3:
+            tytul = font_big.render("STATISTICS", False, self.game.white)
+            self.game.screen.blit(tytul, (300, 20))
+            f1 = open("savefiles/stat_row.txt")
+            f2 = open("savefiles/stat_win.txt")
+            f3 = open("savefiles/stat_difficulty.txt")
+            for i in range(15):
+                numer = font_mid.render("Number of rounds:", False, self.game.white)
+                numer_rzedu = font_mid.render(f1.readline(1), False, self.game.white)
+                winlose = font_mid.render(f2.readline(4), False, self.game.white)
+                difficulty = font_mid.render(f3.readline(6), False, self.game.white)
+                self.game.screen.blit(numer, (50, 60 + i*35))
+                self.game.screen.blit(numer_rzedu, (300, 60 + i*35))
+                self.game.screen.blit(winlose, (350, 60 + i*35))
+                self.game.screen.blit(difficulty, (450, 60 + i*35))
+
         else:
-            font1 = 'fonts/Pixeltype.ttf'
-            font_big = pygame.font.Font(font1, 50)
-            font_mid = pygame.font.Font(font1, 40)
-            font_small = pygame.font.Font(font1, 30)
 
             if self.game.win == 3:
                 background = pygame.image.load("img/easy_background.png")
@@ -55,7 +67,6 @@ class Interface(object):
                 self.game.screen.blit(game_block, (400 - 27, 15))
                 self.game.screen.blit(rules, (29, 400))
                 self.game.screen.blit(result_block, (600 - 8, 15))
-                self.game.screen.blit(cow, (655, 250))
 
             if self.game.win == 0:
                 wincow = pygame.image.load("img/easy_win_cow2.png")

@@ -23,7 +23,7 @@ class Game(object):
         self.kwadrat = pygame.Rect(30, 30, 42, 42)
         self.R = self.G = self.B = 255
         self.n = 0
-        self.win = 0
+        self.win = -1
         self.level = 0
         self.max = 12
         self.dif = [350, 300]
@@ -144,6 +144,43 @@ class Game(object):
         self.player.odp = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
         self.player.kombinacja = [0, 0, 0, 0]
         self.player.row = self.player.col = self.win = 0
+
+    def stat(self):
+        if self.level == 2:
+            f1 = open("savefiles/stat_row.txt", "at")
+            runda = str(self.player.row)
+            f1.write(runda)
+            f1.close()
+            f2 = open("savefiles/stat_win.txt", "at")
+            if self.win == 2:
+                winorlose = "win "
+            else:
+                winorlose = "lose"
+            f2.write(winorlose)
+            f2.close()
+
+        else:
+            f3 = open("savefiles/stat_difficulty.txt", "at")
+            if self.win == 1:
+                trudnosc = "hard  "
+            elif self.win == 3:
+                trudnosc = "medium"
+            elif self.win == 4:
+                trudnosc = "easy  "
+            f3.write(trudnosc)
+            f3.close()
+
+    def showstat(self):
+        f = open("savefiles/stat_row.txt", "r")
+        sum = 0
+        n = 0
+        for x in f:
+            n += 1
+            print(n)
+            print(f.readline(1))
+            # sum += int(f.readline(1))
+            # average = sum/n
+
 
 if __name__ == "__main__":
     Game()
