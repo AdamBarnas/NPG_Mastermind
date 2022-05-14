@@ -93,8 +93,8 @@ class Player(object):
                         self.ruch("space")
                         self.ruch("back")
                 elif self.game.dif[1] == 450 and self.game.dif[0] == 450:
-                    pass
                     # statystyki
+                    self.game.showstat()
                 self.game.forceplay()
         elif self.game.level == 2:
             if direction == "enter":
@@ -202,6 +202,7 @@ class Player(object):
                                     self.game.win = 2
                                     print("wygrana")
                                     self.game.level = 2
+                                    self.game.stat()
 
                             elif self.odp[j][1] == 1:
                                 pygame.draw.circle(self.game.screen, self.game.gray, (self.xdis + 20, 60 + self.drift * j), 8)
@@ -229,3 +230,4 @@ class Player(object):
                         self.game.win = 5
                         print("przegrana")
                         self.game.level = 2
+                        self.game.stat()

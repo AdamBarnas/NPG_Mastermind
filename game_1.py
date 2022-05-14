@@ -145,5 +145,23 @@ class Game(object):
         self.player.kombinacja = [0, 0, 0, 0]
         self.player.row = self.player.col = self.win = 0
 
+    def stat(self):
+        if self.level == 2:
+            f1 = open("savefiles/stat_row.txt", "at")
+            f1.write(self.player.row)
+            f1.close()
+            f2 = open("savefiles/stat_win.txt", "at")
+            f2.write(self.win)
+            f2.close()
+
+        else:
+            f3 = open("savefiles/stat_difficulty.txt", "at")
+            f3.write(self.win)
+            f3.close()
+
+    def showstat(self):
+        pass
+
+
 if __name__ == "__main__":
     Game()

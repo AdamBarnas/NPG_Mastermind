@@ -22,9 +22,12 @@ class Interface(object):
 
     def draw(self):
         if self.game.level == 0:
-            #pygame.draw.rect(self.game.screen, self.gray, (800, 640, 0, 0))
+            # pygame.draw.rect(self.game.screen, self.gray, (800, 640, 0, 0))
             menu = pygame.image.load("img/menu.png")
             self.game.screen.blit(menu, (0, 0))
+
+        elif self.game.level == 3:
+            pass
 
         else:
             font1 = 'fonts/Pixeltype.ttf'
@@ -39,14 +42,12 @@ class Interface(object):
                 result_block = pygame.image.load("img/easy_result.png")
                 cow = pygame.image.load("img/easy_win_cow.png")
 
-
             if self.game.win == 1:
                 background = pygame.image.load("img/hard_background.png")
                 game_block = pygame.image.load("img/hard_game_rows.png")
                 rules = pygame.image.load("img/hard_rules.png")
                 result_block = pygame.image.load("img/hard_result.png")
                 cow = pygame.image.load("img/easy_win_cow.png")
-
 
             if self.game.win == 4:
                 background = pygame.image.load("img/veasy_background.png")
@@ -55,13 +56,11 @@ class Interface(object):
                 result_block = pygame.image.load("img/veasy_result.png")
                 cow = pygame.image.load("img/easy_win_cow.png")
 
-
             if self.game.win == 1 or self.game.win == 3 or self.game.win == 4:
                 self.game.screen.blit(background, (0, 0))
                 self.game.screen.blit(game_block, (400 - 27, 15))
                 self.game.screen.blit(rules, (29, 400))
                 self.game.screen.blit(result_block, (600 - 8, 15))
-
 
             if self.game.win == 0:
                 wincow = pygame.image.load("img/easy_win_cow2.png")
