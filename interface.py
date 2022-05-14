@@ -24,12 +24,14 @@ class Interface(object):
             self.game.screen.blit(menu, (0, 0))
 
         elif self.game.level == 3:
+            statistics = pygame.image.load("img/stats_bkg.png")
+            self.game.screen.blit(statistics, (0, 0))
             tytul = font_big.render("STATISTICS", False, self.game.white)
             self.game.screen.blit(tytul, (300, 20))
             f1 = open("savefiles/stat_row.txt")
             f2 = open("savefiles/stat_win.txt")
             f3 = open("savefiles/stat_difficulty.txt")
-            for i in range(15):
+            for i in range(16):
                 numer = font_mid.render("Number of rounds:", False, self.game.white)
                 numer_rzedu = font_mid.render(f1.readline(1), False, self.game.white)
                 winlose = font_mid.render(f2.readline(4), False, self.game.white)
@@ -69,9 +71,13 @@ class Interface(object):
                 self.game.screen.blit(result_block, (600 - 8, 15))
 
             if self.game.win == 0:
+                backgroundWin = pygame.image.load("img/win_bkg.png")
+                self.game.screen.blit(backgroundWin, (0, 0))
                 wincow = pygame.image.load("img/easy_win_cow2.png")
-                self.game.screen.blit(wincow, (280, 184))
+                self.game.screen.blit(wincow, (280, 150))
 
             if self.game.win == 6:
-                loosecow = pygame.image.load("img/easy_loose_cow2.png")
-                self.game.screen.blit(loosecow, (280, 184))
+                backgroundLoose = pygame.image.load("img/loose_bkg.png")
+                self.game.screen.blit(backgroundLoose, (0,0))
+                loosecow = pygame.image.load("img/hard_loose_cow.png")
+                self.game.screen.blit(loosecow, (280, 100))
