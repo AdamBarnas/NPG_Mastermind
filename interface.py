@@ -31,7 +31,7 @@ class Interface(object):
             f1 = open("savefiles/stat_row.txt")
             f2 = open("savefiles/stat_win.txt")
             f3 = open("savefiles/stat_difficulty.txt")
-            for i in range(15):
+            for i in range(16):
                 numer = font_mid.render("Number of rounds:", False, self.game.white)
                 numer_rzedu = font_mid.render(f1.readline(1), False, self.game.white)
                 winlose = font_mid.render(f2.readline(4), False, self.game.white)
@@ -75,7 +75,6 @@ class Interface(object):
                 self.game.screen.blit(backgroundWin, (0, 0))
                 wincow = pygame.image.load("img/easy_win_cow2.png")
                 self.game.screen.blit(wincow, (280, 150))
-
 
             if self.game.win == 6:
                 backgroundLoose = pygame.image.load("img/loose_bkg.png")
