@@ -170,17 +170,5 @@ class Game(object):
             f3.write(trudnosc)
             f3.close()
 
-    def showstat(self):
-        f = open("savefiles/stat_row.txt", "r")
-        sum = 0
-        n = 0
-        for x in f:
-            n += 1
-            print(n)
-            print(f.readline(1))
-            # sum += int(f.readline(1))
-            # average = sum/n
-
-
 if __name__ == "__main__":
     Game()

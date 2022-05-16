@@ -95,7 +95,6 @@ class Player(object):
                 elif self.game.dif[1] == 450 and self.game.dif[0] == 450:
                     # statystyki
                     self.game.level = 3
-                    self.game.showstat()
                 self.game.forceplay()
         elif self.game.level == 2:
             if direction == "enter":
