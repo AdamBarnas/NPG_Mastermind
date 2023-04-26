@@ -54,7 +54,7 @@ class Player(object):
                             self.kombinacja[j] = 1
                         else:
                             self.kombinacja[j] += 1
-        print(self.kombinacja)
+        # print(self.kombinacja)
 
     def ruch(self, direction):
         if self.game.level == 0:
@@ -89,7 +89,7 @@ class Player(object):
                         self.szyfr()
                         self.game.level = 0
                     else:
-                        print(self.kombinacja)
+                        # print(self.kombinacja)
                         self.ruch("space")
                         self.ruch("back")
                 elif self.game.dif[1] == 450 and self.game.dif[0] == 450:
@@ -140,7 +140,7 @@ class Player(object):
                         self.lista[self.row][self.col] = 6
                     self.col += 1
                     self.drift = 50
-                    print(self.lista)
+                    # print(self.lista)
 
     def spr(self):
         self.ok = self.good = 0
@@ -150,10 +150,10 @@ class Player(object):
             for j in range(4):
                 if self.kombinacja[i] == self.lista[self.row][j] and j != i:
                     self.ok += 1
-        '''print(self.good)
-        print(self.ok)'''
+        # '''print(self.good)
+        # print(self.ok)'''
         self.odp[self.row] = [self.good, self.ok]
-        print(self.odp)
+        # print(self.odp)
 
     def draw(self):
 
@@ -205,7 +205,7 @@ class Player(object):
                                 if self.game.win == 1 or self.game.win == 3 or self.game.win == 4:
                                     self.game.stat()
                                     self.game.win = 2
-                                    print("wygrana")
+                                    # print("wygrana")
                                     self.game.level = 2
                                     self.game.stat()
 
@@ -234,6 +234,6 @@ class Player(object):
                     if j == self.row - 1 and self.game.win == 1 or self.game.win == 3 or self.game.win == 4:
                         self.game.stat()
                         self.game.win = 5
-                        print("przegrana")
+                        # print("przegrana")
                         self.game.level = 2
                         self.game.stat()
